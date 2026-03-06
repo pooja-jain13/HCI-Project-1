@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NYC Public Art Map</title>
+
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.mapboxgl-popup img {
+  width: 200px;
+  margin-top: 8px;
+  border-radius: 6px;
+}
+
+.popup-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicGphaW42ODAxIiwiYSI6ImNtbDA3cHZ4bDBhNXkzbHEyMjE5ODR1azUifQ.zkm5kg40QRzCBkbFqr6ZnA';
+
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/light-v11',
+center: [-73.98, 40.74],
+zoom: 10
+});
+
+const artData = {
+"type": "FeatureCollection",
+"features": [
+{
+"type": "Feature",
+"properties": {
+"title": "The Baayfalls",
+"artist": "Jordan Casteel",
+"image": "https://i.imgur.com/ArzWaqw.jpeg"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-74.0048, 40.7480]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"title": "Unity",
+"artist": "Hank Willis Thomas",
+"image": "https://upload.wikimedia.org/wikipedia/commons/5/54/Unity_Sculpture_Brooklyn.jpg"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-73.989175, 40.696206]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"title": "Go",
+"artist": "Kehinde Wiley",
+"image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Moynihan_Train_Hall_Ceiling.jpg"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-73.9935, 40.7506]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"title": "Eyes on the Street",
+"artist": "Jamel Shabazz",
+"image": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Bronx_Museum_of_the_Arts.jpg"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-73.9270, 40.8315]
+}
+}
+]
+};
+
+map.on('load', () => {
+
+map.addSource('art', {
+type: 'geojson',
+data: artData
+});
+
+map.addLayer({
+id: 'art-points',
+type: 'circle',
+source: 'art',
+paint: {
+'circle-radius': 7,
+'circle-color': '#E63946'
+}
+});
+
+map.on('click', 'art-points', (e) => {
+
+const props = e.features[0].properties;
+const coords = e.features[0].geometry.coordinates.slice();
+
+const popupHTML = `
+<div>
+<div class="popup-title">${props.title}</div>
+<div>${props.artist}</div>
+<img src="${props.image}">
+</div>
+`;
+
+new mapboxgl.Popup()
+.setLngLat(coords)
+.setHTML(popupHTML)
+.addTo(map);
+
+});
+
+map.on('mouseenter', 'art-points', () => {
+map.getCanvas().style.cursor = 'pointer';
+});
+
+map.on('mouseleave', 'art-points', () => {
+map.getCanvas().style.cursor = '';
+});
+
+});
+
+</script>
+
+</body>
+</html>
