@@ -25,58 +25,57 @@ body {
 .popup-container {
   display: flex;
   gap: 12px;
-  max-width: 300px;
-  align-items: flex-start;
+  width: 100%;
 }
 
-/* HORIZONTAL FIX */
+/* Horizontal */
 .popup-container.horizontal {
   flex-direction: row;
 }
 
-/* VERTICAL */
+/* Vertical */
 .popup-container.vertical {
   flex-direction: column;
 }
 
-/* IMAGE FIX */
+/* Image */
 .popup-image {
-  width: 120px;
+  width: 140px;
   height: auto;
   border-radius: 8px;
-  flex-shrink: 0; /* prevents image from shrinking weirdly */
+  flex-shrink: 0;
 }
 
-/* TEXT FIX (VERY IMPORTANT) */
+/* Text */
 .popup-text {
-  display: flex;
-  flex-direction: column;
   flex: 1;
-  min-width: 0; /* THIS FIXES THE OVERFLOW */
 }
 
-/* TITLE */
+/* Title */
 .popup-title {
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 4px;
 }
 
-/* ARTIST */
+/* Artist */
 .popup-artist {
-  font-size: 13px;
+  font-size: 14px;
   color: #2a9d8f !important;
   font-weight: 600;
   margin-bottom: 6px;
 }
 
-/* DESCRIPTION */
+/* Description */
 .popup-description {
-  font-size: 12px;
+  font-size: 13px;
   color: #333;
   line-height: 1.4;
+}
 
-  /* prevents text overflow */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+.mapboxgl-popup-content {
+  max-width: 400px !important;
+  width: 400px !important;
+  border-radius: 12px;
+  padding: 12px;
 }
