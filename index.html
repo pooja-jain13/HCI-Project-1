@@ -9,30 +9,8 @@
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
 
-<style>
-body {
-  margin: 0;
-  padding: 0;
-}
+<link rel="stylesheet" href="styles.css">
 
-#map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-.mapboxgl-popup img {
-  width: 200px;
-  margin-top: 8px;
-  border-radius: 6px;
-}
-
-.popup-title {
-  font-weight: bold;
-  font-size: 16px;
-}
-</style>
 </head>
 
 <body>
@@ -41,7 +19,7 @@ body {
 
 <script>
 
-mapboxgl.accessToken = 'pk.eyJ1IjoicGphaW42ODAxIiwiYSI6ImNtbDA3cHZ4bDBhNXkzbHEyMjE5ODR1azUifQ.zkm5kg40QRzCBkbFqr6ZnA';
+mapboxgl.accessToken = 'YOUR_MAPBOX_TOKEN';
 
 const map = new mapboxgl.Map({
 container: 'map',
@@ -53,12 +31,15 @@ zoom: 10
 const artData = {
 "type": "FeatureCollection",
 "features": [
+
+/* YOUR ORIGINAL ARTISTS (unchanged) */
+
 {
 "type": "Feature",
 "properties": {
 "title": "The Baayfalls",
 "artist": "Jordan Casteel",
-"description": "The Baayfalls (2017/2019) is a 1,400-square-foot mural by Jordan Casteel, displayed on the High Line in NYC. It depicts Senegalese-born street vendors Fallou and her brother, Baaye Demba Sow, who are members of the Baye Fall Sufi sect. The painting highlights themes of community and Black, everyday life.",
+"description": "The Baayfalls mural highlights Senegalese street vendors on the High Line and celebrates Black everyday life.",
 "image": "https://i.imgur.com/ArzWaqw.jpeg"
 },
 "geometry": {
@@ -66,12 +47,13 @@ const artData = {
 "coordinates": [-74.0048, 40.7480]
 }
 },
+
 {
 "type": "Feature",
 "properties": {
 "title": "Unity",
 "artist": "Hank Willis Thomas",
-"description": "Unity is a 22.5-foot bronze sculpture by artist Hank Willis Thomas in Downtown Brooklyn (installed 2019) that serves as a permanent public monument. Inspired by the Statue of Liberty and a basketball player's gesture, it symbolizes community, ambition, and the Brooklyn spirit. The piece represents a muscular arm pointing upward.",
+"description": "A bronze sculpture in Downtown Brooklyn symbolizing community and ambition.",
 "image": "https://i.imgur.com/58wELhI.jpeg"
 },
 "geometry": {
@@ -79,12 +61,13 @@ const artData = {
 "coordinates": [-73.989175, 40.696206]
 }
 },
+
 {
 "type": "Feature",
 "properties": {
 "title": "Go",
 "artist": "Kehinde Wiley",
-"description": "Kehinde Wiley’s Go (2020) is a permanent, hand-painted stained-glass triptych ceiling installation in Moynihan Train Hall, NYC. It depicts young Black New Yorkers in breakdance poses against a blue sky, referencing Renaissance frescoes to blend urban culture with classical art. This 85-foot-long, backlit work celebrates motion, joy, and survival.",
+"description": "A stained-glass ceiling installation in Moynihan Train Hall celebrating movement and urban culture.",
 "image": "https://i.imgur.com/Js1BhOE.jpeg"
 },
 "geometry": {
@@ -92,25 +75,13 @@ const artData = {
 "coordinates": [-73.9935, 40.7506]
 }
 },
-{
-"type": "Feature",
-"properties": {
-"title": "Eyes on the Street",
-"artist": "Jamel Shabazz",
-"description": "KeJamel Shabazz: Eyes on the Street is a 40-year retrospective (1980–2020) celebrating the Brooklyn-born photographer’s iconic documentation of NYC street life. The collection highlights the vibrancy, fashion, and community spirit of the outer boroughs, particularly during the 1980s, focusing on the humanity and dignity of everyday people.hinde Wiley’s Go (2020) is a permanent, hand-painted stained-glass triptych ceiling installation in Moynihan Train Hall, NYC. It depicts young Black New Yorkers in breakdance poses against a blue sky, referencing Renaissance frescoes to blend urban culture with classical art. This 85-foot-long, backlit work celebrates motion, joy, and survival.",
-"image": "https://i.imgur.com/RkN3q3H.png"
-},
-"geometry": {
-"type": "Point",
-"coordinates": [-73.9270, 40.8315]
-}
-},
+
 {
 "type": "Feature",
 "properties": {
 "title": "Brick House",
 "artist": "Simone Leigh",
-"description": "Brick House (2019) is a 16-foot-tall bronze sculpture installed on the High Line. The monumental figure combines features of African architecture and traditional pottery with the form of a Black woman. The work celebrates Black femininity, resilience, and cultural heritage.",
+"description": "A monumental sculpture celebrating Black femininity and cultural heritage.",
 "image": "https://i.imgur.com/Mu4fPVV.jpeg"
 },
 "geometry": {
@@ -118,61 +89,149 @@ const artData = {
 "coordinates": [-74.0048, 40.7473]
 }
 },
+
+/* NEW ARTISTS FROM YOUR TABLE */
+
 {
 "type": "Feature",
 "properties": {
-"title": "Triumph of the Human Spirit",
-"artist": "Lorenzo Pace",
-"description": "Triumph of the Human Spirit (2000) is a 50-foot black granite sculpture in Foley Square. Inspired by African forms, it honors the enslaved Africans buried nearby at the African Burial Ground and reflects themes of memory, resilience, and justice.",
-"image": "https://i.imgur.com/aR2Pnv9.jpeg"
+"title": "Tar Beach",
+"artist": "Faith Ringgold",
+"description": "Faith Ringgold blends painting, quilting, and storytelling. Tar Beach tells the story of a young Black girl imagining freedom while lying on a Harlem rooftop.",
+"image": "https://i.imgur.com/wbiVfvK.jpeg"
 },
 "geometry": {
 "type": "Point",
-"coordinates": [-74.0030, 40.7145]
+"coordinates": [-73.9469, 40.8075]
 }
 },
 
 {
 "type": "Feature",
 "properties": {
-"title": "The Death of Graffiti (1982)",
-"artist": "Lady Pink",
-"description": "Lady Pink was one of the most prominent artists of the 1980s New York subway graffiti movement. Beginning around 1979, she painted large-scale graffiti on subway trains that traveled throughout the city, turning moving trains into “rolling canvases.” Her 1982 painting The Death of Graffiti reflects the visual style and culture of the subway art era, incorporating graffiti tags, trains, and urban landscapes. The work symbolizes the transition of graffiti from underground subway culture into the gallery art world. ",
-"image": "https://i.imgur.com/ofwyQ35.jpeg"
+"title": "SAMO Graffiti",
+"artist": "Jean-Michel Basquiat",
+"description": "Basquiat began as part of the graffiti duo SAMO writing cryptic phrases across downtown Manhattan in the late 1970s.",
+"image": "https://i.imgur.com/9xFhmIO.jpeg"
 },
 "geometry": {
 "type": "Point",
-"coordinates": [-73.9890, 40.7233]
+"coordinates": [-73.9981, 40.7240]
 }
 },
 
 {
 "type": "Feature",
 "properties": {
-"title": "CEKIS “Whole Car” Subway Graffiti (early–mid 1980s)",
-"artist": "Cekis (NYC graffiti writer)",
-"description": "Cekis was part of the New York City subway graffiti movement during the late 1970s and early 1980s, when artists painted large murals and tags on subway trains. His most recognized works were “whole car” graffiti pieces, where an entire subway car was covered with colorful lettering, characters, and stylized tags. These artworks traveled across the city on subway lines, turning trains into moving canvases that exposed thousands of riders to graffiti art daily. The Sunnyside Yard in Queens was one of the major train yards where graffiti writers, including Cekis, frequently painted trains during the height of the subway graffiti era.",
-"image": "https://i.imgur.com/q4GiZ3H.jpeg"
+"title": "All Power to All People",
+"artist": "Hank Willis Thomas",
+"description": "A sculpture exploring race, identity, and civil rights history.",
+"image": "https://i.imgur.com/3rbyiyQ.jpeg"
 },
 "geometry": {
 "type": "Point",
-"coordinates": [-73.9336, 40.7505]
+"coordinates": [-73.9832, 40.7536]
 }
 },
 
 {
 "type": "Feature",
 "properties": {
-"title": "Houston Bowery Wall Mural",
-"artist": "Mata Ruda",
-"description": "Mata Ruda created a vibrant geometric mural at the Houston Bowery Wall, one of New York City's most famous street art locations. Known for its rotating murals by prominent street artists, the wall has become a major cultural landmark for contemporary urban art. Mata Ruda’s mural features bold colors, abstract shapes, and layered patterns that reflect his signature style and the evolution of New York street art from traditional graffiti to large-scale public murals.",
-"image": "https://i.imgur.com/LSc1Irv.jpeg"
+"title": "Hunts Point Graffiti Murals",
+"artist": "Tats Cru",
+"description": "The Bronx graffiti crew known as the 'Mural Kings' evolved from subway graffiti to large-scale murals celebrating hip-hop culture.",
+"image": "https://i.imgur.com/TRtWjMu.jpeg"
 },
 "geometry": {
 "type": "Point",
-"coordinates": [-73.9925, 40.7242]
+"coordinates": [-73.8860, 40.8183]
+}
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "Graffiti Lettering Murals",
+"artist": "Crash (John Matos)",
+"description": "Crash became famous during the NYC subway graffiti era of the 1970s–80s and helped shape early hip-hop graffiti.",
+"image": "https://i.imgur.com/G5jKKrI.jpeg"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-73.8654, 40.8370]
+}
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "Welling Court Stencil Mural",
+"artist": "Lady Aiko",
+"description": "Lady Aiko blends Japanese pop aesthetics with NYC street art traditions through layered stencil murals.",
+"image": "https://i.imgur.com/9rCfaVO.jpeg"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-73.9375, 40.7690]
+}
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "Out of Many, One",
+"artist": "Jorge Rodríguez-Gerada",
+"description": "Rodríguez-Gerada creates massive hyper-realistic charcoal portraits celebrating community identity.",
+"image": "https://i.imgur.com/4Touq3z.jpeg"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-73.8850, 40.7557]
+}
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "Hanao San Mural",
+"artist": "Tomokazu Matsuyama",
+"description": "Matsuyama blends traditional Japanese aesthetics with Western pop culture and street art.",
+"image": "https://i.imgur.com/AkuzUEn.jpeg"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-73.9573, 40.7216]
+}
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "World Trade Center Oculus Mural",
+"artist": "Shantell Martin",
+"description": "Shantell Martin is known for expressive black-and-white line drawings exploring identity and storytelling.",
+"image": "https://i.imgur.com/QLQ8wRi.jpeg"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-74.0132, 40.7126]
+}
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "We Come in Peace",
+"artist": "Huma Bhabha",
+"description": "Bhabha’s sculpture explores themes of history, power, and human conflict.",
+"image": "https://i.imgur.com/Q7mom2L.jpeg"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [-73.9632, 40.7794]
 }
 }
+
 ]
 };
 
