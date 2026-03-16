@@ -21,55 +21,62 @@ body {
   font-size: 16px;
 }
 
-/* POPUP LAYOUT */
+/* POPUP CONTAINER */
 .popup-container {
   display: flex;
   gap: 12px;
-  max-width: 320px;
+  max-width: 300px;
+  align-items: flex-start;
 }
 
-/* Horizontal layout */
+/* HORIZONTAL FIX */
 .popup-container.horizontal {
   flex-direction: row;
-  align-items: center;
 }
 
-/* Vertical layout (default) */
+/* VERTICAL */
 .popup-container.vertical {
   flex-direction: column;
 }
 
-/* Image */
+/* IMAGE FIX */
 .popup-image {
   width: 120px;
   height: auto;
   border-radius: 8px;
+  flex-shrink: 0; /* prevents image from shrinking weirdly */
 }
 
-/* Text container */
+/* TEXT FIX (VERY IMPORTANT) */
 .popup-text {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-width: 0; /* THIS FIXES THE OVERFLOW */
 }
 
-/* Title */
+/* TITLE */
 .popup-title {
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 4px;
 }
 
-/* Artist (NEW STYLE) */
+/* ARTIST */
 .popup-artist {
   font-size: 13px;
-  color: #1ad80c !important;
+  color: #2a9d8f !important;
   font-weight: 600;
   margin-bottom: 6px;
 }
 
-/* Description (NEW STYLE) */
+/* DESCRIPTION */
 .popup-description {
   font-size: 12px;
   color: #333;
   line-height: 1.4;
+
+  /* prevents text overflow */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
