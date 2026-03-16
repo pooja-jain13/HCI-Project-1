@@ -40,7 +40,8 @@ const artData = {
 "title": "The Baayfalls",
 "artist": "Jordan Casteel",
 "description": "The Baayfalls mural highlights Senegalese street vendors on the High Line and celebrates Black everyday life.",
-"image": "https://i.imgur.com/ArzWaqw.jpeg"
+"image": "https://i.imgur.com/ArzWaqw.jpeg",
+"layout": "horizontal"
 },
 "geometry": {
 "type": "Point",
@@ -68,7 +69,8 @@ const artData = {
 "title": "Go",
 "artist": "Kehinde Wiley",
 "description": "A stained-glass ceiling installation in Moynihan Train Hall celebrating movement and urban culture.",
-"image": "https://i.imgur.com/Js1BhOE.jpeg"
+"image": "https://i.imgur.com/Js1BhOE.jpeg",
+"layout": "horizontal"
 },
 "geometry": {
 "type": "Point",
@@ -90,15 +92,14 @@ const artData = {
 }
 },
 
-/* NEW ARTISTS FROM YOUR TABLE */
-
 {
 "type": "Feature",
 "properties": {
 "title": "Tar Beach",
 "artist": "Faith Ringgold",
 "description": "Faith Ringgold blends painting, quilting, and storytelling. Tar Beach tells the story of a young Black girl imagining freedom while lying on a Harlem rooftop.",
-"image": "https://i.imgur.com/wbiVfvK.jpeg"
+"image": "https://i.imgur.com/wbiVfvK.jpeg",
+"layout": "horizontal"
 },
 "geometry": {
 "type": "Point",
@@ -126,7 +127,8 @@ const artData = {
 "title": "All Power to All People",
 "artist": "Hank Willis Thomas",
 "description": "A sculpture exploring race, identity, and civil rights history.",
-"image": "https://i.imgur.com/3rbyiyQ.jpeg"
+"image": "https://i.imgur.com/3rbyiyQ.jpeg",
+"layout": "horizontal"
 },
 "geometry": {
 "type": "Point",
@@ -154,7 +156,8 @@ const artData = {
 "title": "Graffiti Lettering Murals",
 "artist": "Crash (John Matos)",
 "description": "Crash became famous during the NYC subway graffiti era of the 1970s–80s and helped shape early hip-hop graffiti.",
-"image": "https://i.imgur.com/ReR4taz.jpeg"
+"image": "https://i.imgur.com/ReR4taz.jpeg",
+"layout": "horizontal"
 },
 "geometry": {
 "type": "Point",
@@ -182,7 +185,8 @@ const artData = {
 "title": "Out of Many, One",
 "artist": "Jorge Rodríguez-Gerada",
 "description": "Rodríguez-Gerada creates massive hyper-realistic charcoal portraits celebrating community identity.",
-"image": "https://i.imgur.com/4Touq3z.jpeg"
+"image": "https://i.imgur.com/4Touq3z.jpeg",
+"layout": "horizontal"
 },
 "geometry": {
 "type": "Point",
@@ -210,7 +214,8 @@ const artData = {
 "title": "World Trade Center Oculus Mural",
 "artist": "Shantell Martin",
 "description": "Shantell Martin is known for expressive black-and-white line drawings exploring identity and storytelling.",
-"image": "https://i.imgur.com/sMkZ8JG.jpeg"
+"image": "https://i.imgur.com/sMkZ8JG.jpeg",
+"layout": "horizontal"
 },
 "geometry": {
 "type": "Point",
@@ -258,11 +263,16 @@ const props = e.features[0].properties;
 const coords = e.features[0].geometry.coordinates.slice();
 
 const popupHTML = `
-<div>
-<div class="popup-title">${props.title}</div>
-<div>${props.artist}</div>
-<div>${props.description}</div>
-<img src="${props.image}">
+<div class="popup-container ${props.layout || 'vertical'}">
+
+  <img class="popup-image" src="${props.image}">
+
+  <div class="popup-text">
+    <div class="popup-title">${props.title}</div>
+    <div class="popup-artist">${props.artist}</div>
+    <div class="popup-description">${props.description}</div>
+  </div>
+
 </div>
 `;
 
