@@ -87,3 +87,26 @@ body {
   color: #333;
   line-height: 1.4;
 }
+
+/* filter */
+
+.filter-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-container button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}

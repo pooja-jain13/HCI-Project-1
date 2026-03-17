@@ -14,6 +14,17 @@
 
 <body>
 
+<!-- ✅ FILTER BUTTONS -->
+<div class="filter-container">
+  <button onclick="setFilter('all')">All</button>
+  <button onclick="setFilter('musician')">Music</button>
+  <button onclick="setFilter('sculpture')">Sculpture</button>
+  <button onclick="setFilter('painting')">Painting</button>
+  <button onclick="setFilter('drawing')">Drawing</button>
+  <button onclick="setFilter('graffiti')">Graffiti</button>
+  <button onclick="setFilter('photography')">Photography</button>
+</div>
+
 <div id="map"></div>
 
 <script>
@@ -31,15 +42,16 @@ const artData = {
 "type": "FeatureCollection",
 "features": [
 
-/* ===== ORIGINAL ARTISTS ===== */
+/* ===== ARTISTS WITH CATEGORY ===== */
 
 {
 "type": "Feature",
 "properties": {
 "title": "The Baayfalls",
 "artist": "Jordan Casteel",
-"description": "A mural on the High Line depicting Senegalese street vendors and celebrating Black everyday life.",
-"image": "https://i.imgur.com/ArzWaqw.jpeg"
+"description": "A mural on the High Line depicting Senegalese street vendors.",
+"image": "https://i.imgur.com/ArzWaqw.jpeg",
+"category": "painting"
 },
 "geometry": { "type": "Point", "coordinates": [-74.0048, 40.7480] }
 },
@@ -49,9 +61,10 @@ const artData = {
 "properties": {
 "title": "Unity",
 "artist": "Hank Willis Thomas",
-"description": "A bronze sculpture in Downtown Brooklyn symbolizing community and ambition.",
+"description": "A bronze sculpture in Downtown Brooklyn.",
 "image": "https://i.imgur.com/58wELhI.jpeg",
-"layout": "horizontal"
+"layout": "horizontal",
+"category": "sculpture"
 },
 "geometry": { "type": "Point", "coordinates": [-73.989175, 40.696206] }
 },
@@ -61,8 +74,9 @@ const artData = {
 "properties": {
 "title": "Go",
 "artist": "Kehinde Wiley",
-"description": "A stained-glass ceiling installation celebrating movement and urban culture.",
-"image": "https://i.imgur.com/Js1BhOE.jpeg"
+"description": "A stained-glass ceiling installation.",
+"image": "https://i.imgur.com/Js1BhOE.jpeg",
+"category": "painting"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9935, 40.7506] }
 },
@@ -72,8 +86,9 @@ const artData = {
 "properties": {
 "title": "Eyes on the Street",
 "artist": "Jamel Shabazz",
-"description": "A retrospective documenting NYC street life and culture over 40 years.",
-"image": "https://i.imgur.com/RkN3q3H.png"
+"description": "A photography retrospective.",
+"image": "https://i.imgur.com/RkN3q3H.png",
+"category": "photography"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9270, 40.8315] }
 },
@@ -83,9 +98,10 @@ const artData = {
 "properties": {
 "title": "Brick House",
 "artist": "Simone Leigh",
-"description": "A monumental sculpture celebrating Black femininity and cultural heritage.",
+"description": "A monumental sculpture.",
 "image": "https://i.imgur.com/Mu4fPVV.jpeg",
-"layout": "horizontal"
+"layout": "horizontal",
+"category": "sculpture"
 },
 "geometry": { "type": "Point", "coordinates": [-74.0048, 40.7473] }
 },
@@ -93,21 +109,11 @@ const artData = {
 {
 "type": "Feature",
 "properties": {
-"title": "Triumph of the Human Spirit",
-"artist": "Lorenzo Pace",
-"description": "A sculpture honoring enslaved Africans and reflecting resilience and justice.",
-"image": "https://i.imgur.com/aR2Pnv9.jpeg"
-},
-"geometry": { "type": "Point", "coordinates": [-74.0030, 40.7145] }
-},
-
-{
-"type": "Feature",
-"properties": {
 "title": "The Death of Graffiti",
 "artist": "Lady Pink",
-"description": "A work representing the transition of graffiti from subway culture into galleries.",
-"image": "https://i.imgur.com/ofwyQ35.jpeg"
+"description": "Graffiti artwork from subway era.",
+"image": "https://i.imgur.com/ofwyQ35.jpeg",
+"category": "graffiti"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9890, 40.7233] }
 },
@@ -117,8 +123,9 @@ const artData = {
 "properties": {
 "title": "Whole Car Graffiti",
 "artist": "Cekis",
-"description": "Large-scale subway graffiti pieces covering entire train cars in the 1980s.",
-"image": "https://i.imgur.com/q4GiZ3H.jpeg"
+"description": "Subway graffiti pieces.",
+"image": "https://i.imgur.com/q4GiZ3H.jpeg",
+"category": "graffiti"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9336, 40.7505] }
 },
@@ -128,9 +135,10 @@ const artData = {
 "properties": {
 "title": "Houston Bowery Wall",
 "artist": "Mata Ruda",
-"description": "A vibrant geometric mural at a major NYC street art landmark.",
+"description": "Street mural landmark.",
 "image": "https://i.imgur.com/LSc1Irv.jpeg",
-"layout": "horizontal"
+"layout": "horizontal",
+"category": "graffiti"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9925, 40.7242] }
 },
@@ -140,8 +148,9 @@ const artData = {
 "properties": {
 "title": "Tar Beach",
 "artist": "Faith Ringgold",
-"description": "A story of a young Black girl imagining freedom from a Harlem rooftop.",
-"image": "https://i.imgur.com/wbiVfvK.jpeg"
+"description": "Storytelling painting.",
+"image": "https://i.imgur.com/wbiVfvK.jpeg",
+"category": "painting"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9469, 40.8075] }
 },
@@ -151,8 +160,9 @@ const artData = {
 "properties": {
 "title": "SAMO Graffiti",
 "artist": "Jean-Michel Basquiat",
-"description": "Basquiat's early graffiti work across downtown Manhattan in the late 1970s.",
-"image": "https://i.imgur.com/L8pAwA7.jpeg"
+"description": "Graffiti text works.",
+"image": "https://i.imgur.com/L8pAwA7.jpeg",
+"category": "graffiti"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9981, 40.7240] }
 },
@@ -160,46 +170,12 @@ const artData = {
 {
 "type": "Feature",
 "properties": {
-"title": "All Power to All People",
-"artist": "Hank Willis Thomas",
-"description": "A sculpture exploring race, identity, and civil rights history.",
-"image": "https://i.imgur.com/3rbyiyQ.jpeg",
-"layout": "horizontal"
-},
-"geometry": { "type": "Point", "coordinates": [-73.9832, 40.7536] }
-},
-
-{
-"type": "Feature",
-"properties": {
-"title": "Hunts Point Murals",
-"artist": "Tats Cru",
-"description": "Bronx graffiti crew known as the 'Mural Kings'.",
-"image": "https://i.imgur.com/Fxm9Rf0.jpeg",
-"layout": "horizontal"
-},
-"geometry": { "type": "Point", "coordinates": [-73.8860, 40.8183] }
-},
-
-{
-"type": "Feature",
-"properties": {
-"title": "Graffiti Lettering",
-"artist": "Crash (John Matos)",
-"description": "Influential graffiti artist from the 1970s–80s subway era.",
-"image": "https://i.imgur.com/8oUfm3O.jpeg"
-},
-"geometry": { "type": "Point", "coordinates": [-73.8654, 40.8370] }
-},
-
-{
-"type": "Feature",
-"properties": {
 "title": "Welling Court Mural",
 "artist": "Lady Aiko",
-"description": "Japanese pop aesthetics blended with NYC street art.",
+"description": "Japanese street art mural.",
 "image": "https://i.imgur.com/AIrPbhJ.png",
-"layout": "horizontal"
+"layout": "horizontal",
+"category": "painting"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9375, 40.7690] }
 },
@@ -207,33 +183,11 @@ const artData = {
 {
 "type": "Feature",
 "properties": {
-"title": "Out of Many, One",
-"artist": "Jorge Rodríguez-Gerada",
-"description": "Massive hyper-realistic portraits of community members.",
-"image": "https://i.imgur.com/4Touq3z.jpeg"
-},
-"geometry": { "type": "Point", "coordinates": [-73.8850, 40.7557] }
-},
-
-{
-"type": "Feature",
-"properties": {
-"title": "Hanao San Mural",
-"artist": "Tomokazu Matsuyama",
-"description": "Blends Japanese aesthetics with Western pop culture.",
-"image": "https://i.imgur.com/AkuzUEn.jpeg",
-"layout": "horizontal"
-},
-"geometry": { "type": "Point", "coordinates": [-73.9573, 40.7216] }
-},
-
-{
-"type": "Feature",
-"properties": {
 "title": "Oculus Installation",
 "artist": "Shantell Martin",
-"description": "Black-and-white line drawings exploring identity.",
-"image": "https://i.imgur.com/xfPjsdQ.jpeg"
+"description": "Line drawing installation.",
+"image": "https://i.imgur.com/xfPjsdQ.jpeg",
+"category": "drawing"
 },
 "geometry": { "type": "Point", "coordinates": [-74.0132, 40.7126] }
 },
@@ -243,11 +197,14 @@ const artData = {
 "properties": {
 "title": "We Come in Peace",
 "artist": "Huma Bhabha",
-"description": "A monumental sculpture exploring power and history.",
-"image": "https://i.imgur.com/Q7mom2L.jpeg"
+"description": "Sculpture exploring history.",
+"image": "https://i.imgur.com/Q7mom2L.jpeg",
+"category": "sculpture"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9632, 40.7794] }
 },
+
+/* ===== MUSICIANS ===== */
 
 /* Musicians */
 
@@ -257,7 +214,8 @@ const artData = {
 "title": "Empire State of Mind",
 "artist": "Alicia Keys",
 "description": "Alicia Keys grew up in New York and became one of the most recognizable voices representing the city. Her music often references NYC culture and identity.",
-"image": "https://i.imgur.com/jv3Mtfd.jpeg"
+"image": "https://i.imgur.com/jv3Mtfd.jpeg",
+"category": "musician"
 },
 "geometry": {
 "type": "Point",
@@ -271,7 +229,8 @@ const artData = {
 "title": "Illmatic",
 "artist": "Nas",
 "description": "Nas is one of the most respected hip-hop artists in history. His album Illmatic tells vivid stories about growing up in Queensbridge.",
-"image": "https://i.imgur.com/vex549x.jpeg"
+"image": "https://i.imgur.com/vex549x.jpeg",
+"category": "musician"
 },
 "geometry": {
 "type": "Point",
@@ -285,7 +244,8 @@ const artData = {
 "title": "Nobody",
 "artist": "Mitski",
 "description": "Mitski developed her music career while studying at SUNY Purchase and performing around NYC’s indie music venues.",
-"image": "https://i.imgur.com/aKmIjVH.jpeg"
+"image": "https://i.imgur.com/aKmIjVH.jpeg",
+"category": "musician"
 },
 "geometry": {
 "type": "Point",
@@ -299,7 +259,8 @@ const artData = {
 "title": "My Vag",
 "artist": "Awkwafina",
 "description": "Awkwafina gained viral attention through her comedic rap songs before transitioning into acting and film.",
-"image": "https://i.imgur.com/k8LyVS9.jpeg"
+"image": "https://i.imgur.com/k8LyVS9.jpeg",
+"category": "musician"
 },
 "geometry": {
 "type": "Point",
@@ -312,8 +273,9 @@ const artData = {
 "properties": {
 "title": "Tomboy",
 "artist": "Princess Nokia",
-"description": "Princess Nokia blends hip-hop, punk, and experimental sounds while representing Harlem and Latin culture.",
-"image": "https://i.imgur.com/eU7F0S1.jpeg"
+"description": "Princess Nokia is an independent rapper known for blending hip-hop, punk, and experimental sounds while representing Harlem and Latin culture.",
+"image": "https://i.imgur.com/eU7F0S1.jpeg",
+"category": "musician"
 },
 "geometry": {
 "type": "Point",
@@ -327,7 +289,8 @@ const artData = {
 "title": "Honey",
 "artist": "Raveena",
 "description": "Raveena creates dreamy R&B and soul music influenced by South Asian culture and spirituality.",
-"image": "https://i.imgur.com/QQRtzQU.jpeg"
+"image": "https://i.imgur.com/QQRtzQU.jpeg",
+"category": "musician"
 },
 "geometry": {
 "type": "Point",
@@ -341,7 +304,8 @@ const artData = {
 "title": "Raingurl",
 "artist": "Yaeji",
 "description": "Yaeji is an electronic musician and DJ known for mixing house music with soft vocals in Korean and English.",
-"image": "https://i.imgur.com/TzdFG2m.jpeg"
+"image": "https://i.imgur.com/TzdFG2m.jpeg",
+"category": "musician"
 },
 "geometry": {
 "type": "Point",
@@ -354,8 +318,9 @@ const artData = {
 "properties": {
 "title": "Selfie",
 "artist": "Chynna",
-"description": "Chynna was an underground rapper and former model known for dark, experimental hip-hop music.",
-"image": "https://i.imgur.com/AGMKphL.jpeg"
+"description": "Chynna was an underground rapper and former model who became known for dark, experimental hip-hop music.",
+"image": "https://i.imgur.com/AGMKphL.jpeg",
+"category": "musician"
 },
 "geometry": {
 "type": "Point",
@@ -369,7 +334,8 @@ const artData = {
 "title": "Basketball & Seinfeld",
 "artist": "Your Old Droog",
 "description": "Your Old Droog gained attention in the underground rap scene for his lyrical style reminiscent of classic NYC hip-hop.",
-"image": "https://i.imgur.com/tjeMs1e.jpeg"
+"image": "https://i.imgur.com/tjeMs1e.jpeg",
+"category": "musician"
 },
 "geometry": {
 "type": "Point",
@@ -382,8 +348,9 @@ const artData = {
 "properties": {
 "title": "Weight of the World",
 "artist": "MIKE",
-"description": "MIKE is a major voice in the underground NYC hip-hop community known for introspective, experimental rap.",
-"image": "https://i.imgur.com/xuYoFfB.jpeg"
+"description": "MIKE is a major voice in the underground NYC hip-hop community and is known for introspective, experimental rap.",
+"image": "https://i.imgur.com/xuYoFfB.jpeg",
+"category": "musician"
 },
 "geometry": {
 "type": "Point",
@@ -398,45 +365,59 @@ map.on('load', () => {
 
 map.addSource('art', { type: 'geojson', data: artData });
 
+/* 🎨 COLOR BY CATEGORY */
 map.addLayer({
 id: 'art-points',
 type: 'circle',
 source: 'art',
 paint: {
 'circle-radius': 7,
-'circle-color': '#E63946'
+'circle-color': [
+  'match',
+  ['get', 'category'],
+  'musician', '#1d3557',
+  'sculpture', '#e63946',
+  'painting', '#f4a261',
+  'drawing', '#2a9d8f',
+  'graffiti', '#9b5de5',
+  'photography', '#264653',
+  '#888'
+]
 }
 });
 
+/* POPUPS */
 map.on('click', 'art-points', (e) => {
-
 const props = e.features[0].properties;
 const coords = e.features[0].geometry.coordinates.slice();
 
-const popupHTML = `
+new mapboxgl.Popup()
+.setLngLat(coords)
+.setHTML(`
 <div class="popup-wrapper ${props.layout || 'vertical'}">
   <div class="popup-container">
-
     <img class="popup-image" src="${props.image}">
-
     <div class="popup-text">
       <div class="popup-title">${props.title}</div>
       <div class="popup-artist">${props.artist}</div>
       <div class="popup-description">${props.description}</div>
     </div>
-
   </div>
 </div>
-`;
-
-new mapboxgl.Popup()
-.setLngLat(coords)
-.setHTML(popupHTML)
+`)
 .addTo(map);
-
 });
 
 });
+
+/* 🔘 FILTER FUNCTION */
+function setFilter(category) {
+  if (category === 'all') {
+    map.setFilter('art-points', null);
+  } else {
+    map.setFilter('art-points', ['==', ['get', 'category'], category]);
+  }
+}
 
 </script>
 
