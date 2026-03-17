@@ -110,3 +110,25 @@ body {
   cursor: pointer;
   font-size: 12px;
 }
+
+.filter-btn {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #eee;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+/* Hover */
+.filter-btn:hover {
+  background: #ddd;
+}
+
+/* ACTIVE STATE (🔥 THIS IS THE MAGIC) */
+.filter-btn.active {
+  background: #1d3557;
+  color: white;
+  transform: scale(1.05);
+}
