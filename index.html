@@ -16,13 +16,13 @@
 
 <!-- ✅ FILTER BUTTONS -->
 <div class="filter-container">
-  <button class="filter-btn" onclick="setFilter('all', this)">All</button>
-  <button class="filter-btn" onclick="setFilter('musician', this)">Music</button>
-  <button class="filter-btn" onclick="setFilter('sculpture', this)">Sculpture</button>
-  <button class="filter-btn" onclick="setFilter('painting', this)">Painting</button>
-  <button class="filter-btn" onclick="setFilter('drawing', this)">Drawing</button>
-  <button class="filter-btn" onclick="setFilter('graffiti', this)">Graffiti</button>
-  <button class="filter-btn" onclick="setFilter('photography', this)">Photography</button>
+  <button class="filter-btn active" data-category="all" onclick="setFilter('all', this)">All</button>
+  <button class="filter-btn" data-category="musician" onclick="setFilter('musician', this)">Music</button>
+  <button class="filter-btn" data-category="sculpture" onclick="setFilter('sculpture', this)">Sculpture</button>
+  <button class="filter-btn" data-category="painting" onclick="setFilter('painting', this)">Painting</button>
+  <button class="filter-btn" data-category="drawing" onclick="setFilter('drawing', this)">Drawing</button>
+  <button class="filter-btn" data-category="graffiti" onclick="setFilter('graffiti', this)">Graffiti</button>
+  <button class="filter-btn" data-category="photography" onclick="setFilter('photography', this)">Photography</button>
 </div>
 
 <div id="map"></div>

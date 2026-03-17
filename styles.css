@@ -123,12 +123,42 @@ body {
 
 /* Hover */
 .filter-btn:hover {
-  background: #ddd;
+  opacity: 0.8;
 }
 
-/* ACTIVE STATE (🔥 THIS IS THE MAGIC) */
+/* ACTIVE BASE */
 .filter-btn.active {
-  background: #1d3557;
   color: white;
   transform: scale(1.05);
+}
+
+/* 🎨 MATCH EACH CATEGORY COLOR */
+
+.filter-btn[data-category="musician"].active {
+  background: #1d3557;
+}
+
+.filter-btn[data-category="sculpture"].active {
+  background: #e63946;
+}
+
+.filter-btn[data-category="painting"].active {
+  background: #f4a261;
+}
+
+.filter-btn[data-category="drawing"].active {
+  background: #2a9d8f;
+}
+
+.filter-btn[data-category="graffiti"].active {
+  background: #9b5de5;
+}
+
+.filter-btn[data-category="photography"].active {
+  background: #264653;
+}
+
+/* ALL button */
+.filter-btn[data-category="all"].active {
+  background: #333;
 }
