@@ -22,8 +22,8 @@ body {
 }
 
 .popup-wrapper.horizontal .mapboxgl-popup-content {
-  max-width: 400px !important;
-  width: 400px !important;
+  max-width: 500px !important;
+  width: 500px !important;
 }
 
 /* ===== LAYOUT ===== */
@@ -100,4 +100,11 @@ body {
 /* Slight shadow for nicer card feel */
 .mapboxgl-popup-content {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.popup-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0; /* fixes text overflow + wrapping */
 }
