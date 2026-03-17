@@ -40,17 +40,23 @@ body {
 /* Horizontal layout */
 .popup-wrapper.horizontal .popup-container {
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
 }
 
 /* ===== IMAGE ===== */
+
+/* Default (vertical) */
 .popup-image {
   width: 100%;
   border-radius: 8px;
 }
 
+/* Horizontal images (FIXED SIZE + CLEAN LOOK) */
 .popup-wrapper.horizontal .popup-image {
-  width: 140px;
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
   flex-shrink: 0;
 }
 
@@ -60,14 +66,21 @@ body {
   flex-direction: column;
 }
 
+/* Center text nicely in horizontal layout */
+.popup-wrapper.horizontal .popup-text {
+  justify-content: center;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
 /* Title */
 .popup-title {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 4px;
 }
 
-/* Artist */
+/* Artist (styled + colored) */
 .popup-artist {
   font-size: 14px;
   color: #2a9d8f;
@@ -80,4 +93,11 @@ body {
   font-size: 13px;
   color: #333;
   line-height: 1.4;
+}
+
+/* ===== OPTIONAL POLISH ===== */
+
+/* Slight shadow for nicer card feel */
+.mapboxgl-popup-content {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
