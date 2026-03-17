@@ -10,7 +10,6 @@
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
@@ -32,21 +31,17 @@ const artData = {
 "type": "FeatureCollection",
 "features": [
 
-/* YOUR ORIGINAL ARTISTS (unchanged) */
+/* ===== ORIGINAL ARTISTS ===== */
 
 {
 "type": "Feature",
 "properties": {
 "title": "The Baayfalls",
 "artist": "Jordan Casteel",
-"description": "The Baayfalls mural highlights Senegalese street vendors on the High Line and celebrates Black everyday life.",
-"image": "https://i.imgur.com/ArzWaqw.jpeg",
-"layout": "horizontal"
+"description": "A mural on the High Line depicting Senegalese street vendors and celebrating Black everyday life.",
+"image": "https://i.imgur.com/ArzWaqw.jpeg"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-74.0048, 40.7480]
-}
+"geometry": { "type": "Point", "coordinates": [-74.0048, 40.7480] }
 },
 
 {
@@ -55,12 +50,10 @@ const artData = {
 "title": "Unity",
 "artist": "Hank Willis Thomas",
 "description": "A bronze sculpture in Downtown Brooklyn symbolizing community and ambition.",
-"image": "https://i.imgur.com/58wELhI.jpeg"
+"image": "https://i.imgur.com/58wELhI.jpeg",
+"layout": "horizontal"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-73.989175, 40.696206]
-}
+"geometry": { "type": "Point", "coordinates": [-73.989175, 40.696206] }
 },
 
 {
@@ -68,14 +61,21 @@ const artData = {
 "properties": {
 "title": "Go",
 "artist": "Kehinde Wiley",
-"description": "A stained-glass ceiling installation in Moynihan Train Hall celebrating movement and urban culture.",
-"image": "https://i.imgur.com/Js1BhOE.jpeg",
-"layout": "horizontal"
+"description": "A stained-glass ceiling installation celebrating movement and urban culture.",
+"image": "https://i.imgur.com/Js1BhOE.jpeg"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-73.9935, 40.7506]
-}
+"geometry": { "type": "Point", "coordinates": [-73.9935, 40.7506] }
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "Eyes on the Street",
+"artist": "Jamel Shabazz",
+"description": "A retrospective documenting NYC street life and culture over 40 years.",
+"image": "https://i.imgur.com/RkN3q3H.png"
+},
+"geometry": { "type": "Point", "coordinates": [-73.9270, 40.8315] }
 },
 
 {
@@ -84,12 +84,55 @@ const artData = {
 "title": "Brick House",
 "artist": "Simone Leigh",
 "description": "A monumental sculpture celebrating Black femininity and cultural heritage.",
-"image": "https://i.imgur.com/Mu4fPVV.jpeg"
+"image": "https://i.imgur.com/Mu4fPVV.jpeg",
+"layout": "horizontal"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-74.0048, 40.7473]
-}
+"geometry": { "type": "Point", "coordinates": [-74.0048, 40.7473] }
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "Triumph of the Human Spirit",
+"artist": "Lorenzo Pace",
+"description": "A sculpture honoring enslaved Africans and reflecting resilience and justice.",
+"image": "https://i.imgur.com/aR2Pnv9.jpeg"
+},
+"geometry": { "type": "Point", "coordinates": [-74.0030, 40.7145] }
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "The Death of Graffiti",
+"artist": "Lady Pink",
+"description": "A work representing the transition of graffiti from subway culture into galleries.",
+"image": "https://i.imgur.com/ofwyQ35.jpeg"
+},
+"geometry": { "type": "Point", "coordinates": [-73.9890, 40.7233] }
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "Whole Car Graffiti",
+"artist": "Cekis",
+"description": "Large-scale subway graffiti pieces covering entire train cars in the 1980s.",
+"image": "https://i.imgur.com/q4GiZ3H.jpeg"
+},
+"geometry": { "type": "Point", "coordinates": [-73.9336, 40.7505] }
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "Houston Bowery Wall",
+"artist": "Mata Ruda",
+"description": "A vibrant geometric mural at a major NYC street art landmark.",
+"image": "https://i.imgur.com/LSc1Irv.jpeg",
+"layout": "horizontal"
+},
+"geometry": { "type": "Point", "coordinates": [-73.9925, 40.7242] }
 },
 
 {
@@ -97,14 +140,10 @@ const artData = {
 "properties": {
 "title": "Tar Beach",
 "artist": "Faith Ringgold",
-"description": "Faith Ringgold blends painting, quilting, and storytelling. Tar Beach tells the story of a young Black girl imagining freedom while lying on a Harlem rooftop.",
-"image": "https://i.imgur.com/wbiVfvK.jpeg",
-"layout": "horizontal"
+"description": "A story of a young Black girl imagining freedom from a Harlem rooftop.",
+"image": "https://i.imgur.com/wbiVfvK.jpeg"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-73.9469, 40.8075]
-}
+"geometry": { "type": "Point", "coordinates": [-73.9469, 40.8075] }
 },
 
 {
@@ -112,13 +151,10 @@ const artData = {
 "properties": {
 "title": "SAMO Graffiti",
 "artist": "Jean-Michel Basquiat",
-"description": "Basquiat began as part of the graffiti duo SAMO writing cryptic phrases across downtown Manhattan in the late 1970s.",
+"description": "Basquiat's early graffiti work across downtown Manhattan in the late 1970s.",
 "image": "https://i.imgur.com/9xFhmIO.jpeg"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-73.9981, 40.7240]
-}
+"geometry": { "type": "Point", "coordinates": [-73.9981, 40.7240] }
 },
 
 {
@@ -130,53 +166,42 @@ const artData = {
 "image": "https://i.imgur.com/3rbyiyQ.jpeg",
 "layout": "horizontal"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-73.9832, 40.7536]
-}
+"geometry": { "type": "Point", "coordinates": [-73.9832, 40.7536] }
 },
 
 {
 "type": "Feature",
 "properties": {
-"title": "Hunts Point Graffiti Murals",
+"title": "Hunts Point Murals",
 "artist": "Tats Cru",
-"description": "The Bronx graffiti crew known as the 'Mural Kings' evolved from subway graffiti to large-scale murals celebrating hip-hop culture.",
-"image": "https://i.imgur.com/t3KupTf.jpeg"
-},
-"geometry": {
-"type": "Point",
-"coordinates": [-73.8860, 40.8183]
-}
-},
-
-{
-"type": "Feature",
-"properties": {
-"title": "Graffiti Lettering Murals",
-"artist": "Crash (John Matos)",
-"description": "Crash became famous during the NYC subway graffiti era of the 1970s–80s and helped shape early hip-hop graffiti.",
-"image": "https://i.imgur.com/ReR4taz.jpeg",
+"description": "Bronx graffiti crew known as the 'Mural Kings'.",
+"image": "https://i.imgur.com/TRtWjMu.jpeg",
 "layout": "horizontal"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-73.8654, 40.8370]
-}
+"geometry": { "type": "Point", "coordinates": [-73.8860, 40.8183] }
 },
 
 {
 "type": "Feature",
 "properties": {
-"title": "Welling Court Stencil Mural",
-"artist": "Lady Aiko",
-"description": "Lady Aiko blends Japanese pop aesthetics with NYC street art traditions through layered stencil murals.",
-"image": "https://i.imgur.com/AIrPbhJ.png"
+"title": "Graffiti Lettering",
+"artist": "Crash (John Matos)",
+"description": "Influential graffiti artist from the 1970s–80s subway era.",
+"image": "https://i.imgur.com/G5jKKrI.jpeg"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-73.9375, 40.7690]
-}
+"geometry": { "type": "Point", "coordinates": [-73.8654, 40.8370] }
+},
+
+{
+"type": "Feature",
+"properties": {
+"title": "Welling Court Mural",
+"artist": "Lady Aiko",
+"description": "Japanese pop aesthetics blended with NYC street art.",
+"image": "https://i.imgur.com/9rCfaVO.jpeg",
+"layout": "horizontal"
+},
+"geometry": { "type": "Point", "coordinates": [-73.9375, 40.7690] }
 },
 
 {
@@ -184,14 +209,10 @@ const artData = {
 "properties": {
 "title": "Out of Many, One",
 "artist": "Jorge Rodríguez-Gerada",
-"description": "Rodríguez-Gerada creates massive hyper-realistic charcoal portraits celebrating community identity.",
-"image": "https://i.imgur.com/4Touq3z.jpeg",
-"layout": "horizontal"
+"description": "Massive hyper-realistic portraits of community members.",
+"image": "https://i.imgur.com/4Touq3z.jpeg"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-73.8850, 40.7557]
-}
+"geometry": { "type": "Point", "coordinates": [-73.8850, 40.7557] }
 },
 
 {
@@ -199,28 +220,22 @@ const artData = {
 "properties": {
 "title": "Hanao San Mural",
 "artist": "Tomokazu Matsuyama",
-"description": "Matsuyama blends traditional Japanese aesthetics with Western pop culture and street art.",
-"image": "https://i.imgur.com/AkuzUEn.jpeg"
+"description": "Blends Japanese aesthetics with Western pop culture.",
+"image": "https://i.imgur.com/AkuzUEn.jpeg",
+"layout": "horizontal"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-73.9573, 40.7216]
-}
+"geometry": { "type": "Point", "coordinates": [-73.9573, 40.7216] }
 },
 
 {
 "type": "Feature",
 "properties": {
-"title": "World Trade Center Oculus Mural",
+"title": "Oculus Installation",
 "artist": "Shantell Martin",
-"description": "Shantell Martin is known for expressive black-and-white line drawings exploring identity and storytelling.",
-"image": "https://i.imgur.com/sMkZ8JG.jpeg",
-"layout": "horizontal"
+"description": "Black-and-white line drawings exploring identity.",
+"image": "https://i.imgur.com/QLQ8wRi.jpeg"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-74.0132, 40.7126]
-}
+"geometry": { "type": "Point", "coordinates": [-74.0132, 40.7126] }
 },
 
 {
@@ -228,13 +243,10 @@ const artData = {
 "properties": {
 "title": "We Come in Peace",
 "artist": "Huma Bhabha",
-"description": "Bhabha’s sculpture explores themes of history, power, and human conflict.",
+"description": "A monumental sculpture exploring power and history.",
 "image": "https://i.imgur.com/Q7mom2L.jpeg"
 },
-"geometry": {
-"type": "Point",
-"coordinates": [-73.9632, 40.7794]
-}
+"geometry": { "type": "Point", "coordinates": [-73.9632, 40.7794] }
 }
 
 ]
@@ -242,10 +254,7 @@ const artData = {
 
 map.on('load', () => {
 
-map.addSource('art', {
-type: 'geojson',
-data: artData
-});
+map.addSource('art', { type: 'geojson', data: artData });
 
 map.addLayer({
 id: 'art-points',
@@ -263,16 +272,18 @@ const props = e.features[0].properties;
 const coords = e.features[0].geometry.coordinates.slice();
 
 const popupHTML = `
-<div class="popup-container ${props.layout || 'vertical'}">
+<div class="popup-wrapper ${props.layout || 'vertical'}">
+  <div class="popup-container">
 
-  <img class="popup-image" src="${props.image}">
+    <img class="popup-image" src="${props.image}">
 
-  <div class="popup-text">
-    <div class="popup-title">${props.title}</div>
-    <div class="popup-artist">${props.artist}</div>
-    <div class="popup-description">${props.description}</div>
+    <div class="popup-text">
+      <div class="popup-title">${props.title}</div>
+      <div class="popup-artist">${props.artist}</div>
+      <div class="popup-description">${props.description}</div>
+    </div>
+
   </div>
-
 </div>
 `;
 
@@ -281,14 +292,6 @@ new mapboxgl.Popup()
 .setHTML(popupHTML)
 .addTo(map);
 
-});
-
-map.on('mouseenter', 'art-points', () => {
-map.getCanvas().style.cursor = 'pointer';
-});
-
-map.on('mouseleave', 'art-points', () => {
-map.getCanvas().style.cursor = '';
 });
 
 });
