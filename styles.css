@@ -1,3 +1,4 @@
+/* ===== BASE MAP ===== */
 body {
   margin: 0;
   padding: 0;
@@ -13,23 +14,29 @@ body {
 /* ===== POPUP BASE ===== */
 .mapboxgl-popup-content {
   border-radius: 12px;
-  padding: 12px;
+  padding: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* ===== WIDTH CONTROL ===== */
+
+/* Vertical popups (compact) */
 .popup-wrapper.vertical .mapboxgl-popup-content {
   max-width: 260px !important;
 }
 
+/* Horizontal popups (wide) */
 .popup-wrapper.horizontal .mapboxgl-popup-content {
   max-width: 500px !important;
   width: 500px !important;
 }
 
 /* ===== LAYOUT ===== */
+
 .popup-container {
   display: flex;
-  gap: 12px;
+  gap: 16px;
+  width: 100%; /* VERY IMPORTANT */
 }
 
 /* Vertical layout */
@@ -40,35 +47,37 @@ body {
 /* Horizontal layout */
 .popup-wrapper.horizontal .popup-container {
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
 }
 
 /* ===== IMAGE ===== */
 
-/* Default (vertical) */
+/* Vertical image */
 .popup-image {
   width: 100%;
   border-radius: 8px;
 }
 
-/* Horizontal images (FIXED SIZE + CLEAN LOOK) */
+/* Horizontal image (balanced size) */
 .popup-wrapper.horizontal .popup-image {
-  width: 160px;
-  height: 120px;
+  width: 180px;
+  height: 130px;
   object-fit: cover;
   border-radius: 8px;
   flex-shrink: 0;
 }
 
 /* ===== TEXT ===== */
+
 .popup-text {
   display: flex;
   flex-direction: column;
 }
 
-/* Center text nicely in horizontal layout */
+/* CRITICAL FIX (prevents layout breaking) */
 .popup-wrapper.horizontal .popup-text {
-  justify-content: center;
+  flex: 1;
+  min-width: 0;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -80,7 +89,7 @@ body {
   margin-bottom: 4px;
 }
 
-/* Artist (styled + colored) */
+/* Artist */
 .popup-artist {
   font-size: 14px;
   color: #2a9d8f;
@@ -93,18 +102,4 @@ body {
   font-size: 13px;
   color: #333;
   line-height: 1.4;
-}
-
-/* ===== OPTIONAL POLISH ===== */
-
-/* Slight shadow for nicer card feel */
-.mapboxgl-popup-content {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.popup-text {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 0; /* fixes text overflow + wrapping */
 }
