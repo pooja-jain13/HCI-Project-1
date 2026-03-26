@@ -226,6 +226,7 @@ const artData = {
 "title": "Empire State of Mind",
 "artist": "Alicia Keys",
 "description": "Alicia Keys grew up in New York and became one of the most recognizable voices representing the city. Her music often references NYC culture and identity.",
+"link": "https://www.youtube.com/watch?v=vk6014HuxcE",
 "image": "https://i.imgur.com/jv3Mtfd.jpeg",
 "category": "musician"
 },
@@ -241,6 +242,7 @@ const artData = {
 "title": "Illmatic",
 "artist": "Nas",
 "description": "Nas is one of the most respected hip-hop artists in history. His album Illmatic tells vivid stories about growing up in Queensbridge.",
+"link": "https://www.youtube.com/playlist?list=PLrbFUdbfepXUKrZo3oi-53e-99J72nJyD",
 "image": "https://i.imgur.com/vex549x.jpeg",
 "category": "musician"
 },
@@ -256,6 +258,7 @@ const artData = {
 "title": "Nobody",
 "artist": "Mitski",
 "description": "Mitski developed her music career while studying at SUNY Purchase and performing around NYC’s indie music venues.",
+"link": "https://www.youtube.com/watch?v=qooWnw5rEcI",
 "image": "https://i.imgur.com/aKmIjVH.jpeg",
 "category": "musician"
 },
@@ -271,6 +274,7 @@ const artData = {
 "title": "My Vag",
 "artist": "Awkwafina",
 "description": "Awkwafina gained viral attention through her comedic rap songs before transitioning into acting and film.",
+"link": "https://www.youtube.com/watch?v=z726OPwCnjE",
 "image": "https://i.imgur.com/k8LyVS9.jpeg",
 "category": "musician"
 },
@@ -286,6 +290,7 @@ const artData = {
 "title": "Tomboy",
 "artist": "Princess Nokia",
 "description": "Princess Nokia is an independent rapper known for blending hip-hop, punk, and experimental sounds while representing Harlem and Latin culture.",
+"link": "https://www.youtube.com/watch?v=AH-LyInSNYw",
 "image": "https://i.imgur.com/eU7F0S1.jpeg",
 "category": "musician"
 },
@@ -301,6 +306,7 @@ const artData = {
 "title": "Honey",
 "artist": "Raveena",
 "description": "Raveena creates dreamy R&B and soul music influenced by South Asian culture and spirituality.",
+"link": "https://www.youtube.com/watch?v=xy4RebilRSI",
 "image": "https://i.imgur.com/QQRtzQU.jpeg",
 "category": "musician"
 },
@@ -316,6 +322,7 @@ const artData = {
 "title": "Raingurl",
 "artist": "Yaeji",
 "description": "Yaeji is an electronic musician and DJ known for mixing house music with soft vocals in Korean and English.",
+"link": "https://www.youtube.com/watch?v=_3T8KznhThQ",
 "image": "https://i.imgur.com/TzdFG2m.jpeg",
 "category": "musician"
 },
@@ -331,6 +338,7 @@ const artData = {
 "title": "Selfie",
 "artist": "Chynna",
 "description": "Chynna was an underground rapper and former model who became known for dark, experimental hip-hop music.",
+"link": "https://www.youtube.com/watch?v=2DPHaWiHr7g",
 "image": "https://i.imgur.com/AGMKphL.jpeg",
 "category": "musician"
 },
@@ -346,6 +354,7 @@ const artData = {
 "title": "Basketball & Seinfeld",
 "artist": "Your Old Droog",
 "description": "Your Old Droog gained attention in the underground rap scene for his lyrical style reminiscent of classic NYC hip-hop.",
+"link": "https://www.youtube.com/watch?v=xrHO-lkSV0Y",
 "image": "https://i.imgur.com/tjeMs1e.jpeg",
 "category": "musician"
 },
@@ -361,6 +370,7 @@ const artData = {
 "title": "Weight of the World",
 "artist": "MIKE",
 "description": "MIKE is a major voice in the underground NYC hip-hop community and is known for introspective, experimental rap.",
+"link": "https://www.youtube.com/playlist?list=PL3UG6Zf2hssfKDCeVfxe0Oqlziu-Inwcu",
 "image": "https://i.imgur.com/xuYoFfB.jpeg",
 "category": "musician"
 },
@@ -423,6 +433,7 @@ new mapboxgl.Popup()
       <div class="popup-artist">${props.artist}</div>
       <div class="popup-description">${props.description}</div>
       <div class="popup-location">${props.location || ''}</div>
+      ${props.link ? `<a href="${props.link}" target="_blank" class="popup-link">Learn more</a>` : ''}
     </div>
   </div>
 </div>
