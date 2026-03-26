@@ -90,6 +90,7 @@ const artData = {
 "title": "Eyes on the Street",
 "artist": "Jamel Shabazz",
 "description": "A photography retrospective.",
+"artistLink": "https://www.instagram.com/jamelshabazz/",
 "image": "https://i.imgur.com/RkN3q3H.png",
 "category": "photography"
 },
@@ -117,7 +118,7 @@ const artData = {
 "artist": "Lady Pink",
 "description": "Graffiti artwork from subway era.",
 "image": "https://i.imgur.com/ofwyQ35.jpeg",
-"location": "https://www.ladypinknyc.com/",
+"artistLink": "https://www.ladypinknyc.com/",
 "category": "graffiti"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9890, 40.7233] }
@@ -130,7 +131,7 @@ const artData = {
 "artist": "Cekis",
 "description": "Subway graffiti pieces.",
 "image": "https://i.imgur.com/q4GiZ3H.jpeg",
-"location": "https://elcekis.com/",
+"artistLink": "https://elcekis.com/",
 "category": "graffiti"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9336, 40.7505] }
@@ -170,7 +171,7 @@ const artData = {
 "artist": "Jean-Michel Basquiat",
 "description": "Graffiti text works.",
 "image": "https://i.imgur.com/L8pAwA7.jpeg",
-"location": "https://www.basquiat.com/",
+"artistLink": "https://www.basquiat.com/",
 "category": "graffiti"
 },
 "geometry": { "type": "Point", "coordinates": [-73.9981, 40.7240] }
@@ -433,7 +434,8 @@ new mapboxgl.Popup()
       <div class="popup-artist">${props.artist}</div>
       <div class="popup-description">${props.description}</div>
       <div class="popup-location">${props.location || ''}</div>
-      ${props.link ? `<a href="${props.link}" target="_blank" class="popup-link">Learn more</a>` : ''}
+      ${props.link ? `<a href="${props.link}" target="_blank" class="popup-link">Listen to Song</a>` : ''}
+      ${props.artistLink ? `<a href="${props.artistLink}" target="_blank" class="popup-link">See Artist's Work</a>` : ''}
     </div>
   </div>
 </div>
