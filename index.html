@@ -100,9 +100,9 @@ const artData = {
 "artist": "Simone Leigh",
 "description": "A monumental sculpture.",
 "image": "https://i.imgur.com/Mu4fPVV.jpeg",
+"location": "New York, NY 10011",
 "layout": "horizontal",
-"category": "sculpture",
-"description": "New York, NY 10011",
+"category": "sculpture"
 },
 "geometry": { "type": "Point", "coordinates": [-74.0048, 40.7473] }
 },
@@ -411,6 +411,7 @@ new mapboxgl.Popup()
       <div class="popup-title">${props.title}</div>
       <div class="popup-artist">${props.artist}</div>
       <div class="popup-description">${props.description}</div>
+      <div class="popup-location">${props.location || ''}</div>
     </div>
   </div>
 </div>
